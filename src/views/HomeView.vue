@@ -217,97 +217,91 @@ async function PredictClick() {
 </script>
 
 <template>
+<div class="container mx-auto pt-10">
+    <h1 class="text-3xl text-white font-bold">Viral Predictor</h1>
+    <p class="text-white pt-4 font-bold">Simulate how users react to your content so you know it'll go viral
+        before you post</p>
 
-    <div class="bg-gray-950">
-        <div class="container mx-auto pt-10">
-            <h1 class="text-3xl text-white font-bold">Viral Predictor</h1>
-            <p class="text-white pt-4 font-bold">Simulate how users react to your content so you know it'll go viral
-                before you post</p>
-
-            <div class="grid grid-cols-2 gap-6">
-                <div class="">
-                    <h1 class="text-2xl text-white font-bold pt-10">Version A</h1>
-                    <p class="text-white text-sm pt-2">Enter your content here</p>
-                    <div class="pt-2">
-                        <textarea
-                            class="bg-gray-800 pl-2 w-full h-60 rounded-lg focus:outline-none focus:ring ring-gray-500 text-white"
-                            rows="4" v-model="version_a"></textarea>
-                    </div>
-                    <p class="text-white text-sm pt-2">Platform</p>
-                    <div class="pt-2">
-                        <select
-                            class="text-white pl-2 bg-gray-800 w-full h-10 rounded-lg focus:outline-none focus:ring ring-gray-500"
-                            v-model="selectedPlatform">
-                            <option v-for="platform in platforms" :key="platform.value" :value="platform.value">
-                                {{ platform.name }}
-                            </option>
-                        </select>
-                    </div>
-                    <p class="text-white text-sm pt-2">OpenRouter API Key</p>
-                    <div class="pt-2">
-                        <input
-                            class="bg-gray-800 pl-2 w-full h-10 rounded-lg focus:outline-none focus:ring ring-gray-500 text-white"
-                            type="text" v-model="openai_api_key">
-                    </div>
-                    <div class="pt-6">
-                        <button
-                            class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring ring-gray-500"
-                            @click="PredictClick">
-                            Predict
-                        </button>
-                    </div>
-                </div>
-
-                <div class="">
-                    <h1 class="text-2xl text-white font-bold pt-10">Version B</h1>
-                    <p class="text-white text-sm  pt-2">Enter your content here</p>
-                    <div class="pt-2">
-                        <textarea
-                            class="bg-gray-800 pl-2 w-full h-60 rounded-lg focus:outline-none focus:ring ring-gray-500 text-white"
-                            rows="4" v-model="version_b"></textarea>
-                    </div>
-                    <p class="text-white text-sm  pt-2">Max Users</p>
-                    <div class="pt-2">
-                        <input
-                            class="bg-gray-800 pl-2 w-full h-10 rounded-lg focus:outline-none focus:ring ring-gray-500 text-white"
-                            type="text" v-model="max_users">
-                    </div>
-                    <p class="text-white text-sm  pt-2">Model</p>
-                    <div class="pt-2 ">
-                        <input
-                            class="bg-gray-800 pl-2 w-full h-10 rounded-lg focus:outline-none focus:ring ring-gray-500 text-white"
-                            type="text" v-model="model_type">
-                    </div>
-                </div>
+    <div class="grid grid-cols-2 gap-6">
+        <div class="">
+            <h1 class="text-2xl text-white font-bold pt-10">Version A</h1>
+            <p class="text-white text-sm pt-2">Enter your content here</p>
+            <div class="pt-2">
+                <textarea
+                    class="bg-gray-800 pl-2 w-full h-60 rounded-lg focus:outline-none focus:ring ring-gray-500 text-white"
+                    rows="4" v-model="version_a"></textarea>
             </div>
-            <h1 class="text-2xl text-white font-bold pt-10">Cumulative Engagement</h1>
-
-            <div class="">
-                <v-chart class="" autoresize :option="option" theme="dark" style="height: 400px"></v-chart>
+            <p class="text-white text-sm pt-2">Platform</p>
+            <div class="pt-2">
+                <select
+                    class="text-white pl-2 bg-gray-800 w-full h-10 rounded-lg focus:outline-none focus:ring ring-gray-500"
+                    v-model="selectedPlatform">
+                    <option v-for="platform in platforms" :key="platform.value" :value="platform.value">
+                        {{ platform.name }}
+                    </option>
+                </select>
             </div>
-
-            <h1 class="text-2xl text-white font-bold">Statistical Confidence</h1>
-            <div class="grid grid-cols-4 gap-6 pt-4 pb-10">
-                <div class="text-white">
-                    <p class="pt-2 font-bold text-xl">Likes</p>
-                    <p class="pt-2">{{ like_confidence.toFixed(2) }}% Vers.{{ like_winner }}</p>
-                </div>
-                <div class="text-white">
-                    <p class="pt-2 font-bold text-xl">Comments</p>
-                    <p class="pt-2">{{ comment_confidence.toFixed(2) }}% Vers.{{ comment_winner }}</p>
-                </div>
-                <div class="text-white">
-                    <p class="pt-2 font-bold text-xl">Shares</p>
-                    <p class="pt-2">{{ share_confidence.toFixed(2) }}% Vers.{{ share_winner }}</p>
-                </div>
-                <div class="text-white">
-                    <p class="pt-2 font-bold text-xl">Quotes</p>
-                    <p class="pt-2">{{ quote_confidence.toFixed(2) }}% Vers.{{ quote_winner }}</p>
-                </div>
+            <p class="text-white text-sm pt-2">OpenRouter API Key</p>
+            <div class="pt-2">
+                <input
+                    class="bg-gray-800 pl-2 w-full h-10 rounded-lg focus:outline-none focus:ring ring-gray-500 text-white"
+                    type="text" v-model="openai_api_key">
+            </div>
+            <div class="pt-6">
+                <button
+                    class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring ring-gray-500"
+                    @click="PredictClick">
+                    Predict
+                </button>
             </div>
         </div>
 
+        <div class="">
+            <h1 class="text-2xl text-white font-bold pt-10">Version B</h1>
+            <p class="text-white text-sm  pt-2">Enter your content here</p>
+            <div class="pt-2">
+                <textarea
+                    class="bg-gray-800 pl-2 w-full h-60 rounded-lg focus:outline-none focus:ring ring-gray-500 text-white"
+                    rows="4" v-model="version_b"></textarea>
+            </div>
+            <p class="text-white text-sm  pt-2">Max Users</p>
+            <div class="pt-2">
+                <input
+                    class="bg-gray-800 pl-2 w-full h-10 rounded-lg focus:outline-none focus:ring ring-gray-500 text-white"
+                    type="text" v-model="max_users">
+            </div>
+            <p class="text-white text-sm  pt-2">Model</p>
+            <div class="pt-2 ">
+                <input
+                    class="bg-gray-800 pl-2 w-full h-10 rounded-lg focus:outline-none focus:ring ring-gray-500 text-white"
+                    type="text" v-model="model_type">
+            </div>
+        </div>
+    </div>
+    <h1 class="text-2xl text-white font-bold pt-10">Cumulative Engagement</h1>
 
+    <div class="">
+        <v-chart class="" autoresize :option="option" theme="dark" style="height: 400px"></v-chart>
     </div>
 
+    <h1 class="text-2xl text-white font-bold">Statistical Confidence</h1>
+    <div class="grid grid-cols-4 gap-6 pt-4 pb-10">
+        <div class="text-white">
+            <p class="pt-2 font-bold text-xl">Likes</p>
+            <p class="pt-2">{{ like_confidence.toFixed(2) }}% Vers.{{ like_winner }}</p>
+        </div>
+        <div class="text-white">
+            <p class="pt-2 font-bold text-xl">Comments</p>
+            <p class="pt-2">{{ comment_confidence.toFixed(2) }}% Vers.{{ comment_winner }}</p>
+        </div>
+        <div class="text-white">
+            <p class="pt-2 font-bold text-xl">Shares</p>
+            <p class="pt-2">{{ share_confidence.toFixed(2) }}% Vers.{{ share_winner }}</p>
+        </div>
+        <div class="text-white">
+            <p class="pt-2 font-bold text-xl">Quotes</p>
+            <p class="pt-2">{{ quote_confidence.toFixed(2) }}% Vers.{{ quote_winner }}</p>
+        </div>
+    </div>
+</div>
 </template>
