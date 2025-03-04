@@ -4,6 +4,7 @@ import { ref } from "vue";
 
 
 const option = ref({
+    backgroundColor: '#030712',
     legend: {
         data: ['engagement_a', 'engagement_b']
     },
@@ -35,7 +36,7 @@ const option = ref({
 
 <template>
 
-<div class="bg-gray-950 h-screen w-full">
+<div class="bg-gray-950">
     <div class="container mx-auto pt-10">
         <h1 class="text-3xl text-white font-bold">Viral Predictor</h1>
         <p class="text-white pt-4 font-bold">Simulate how users react to your content so you know it'll go viral before you post</p>
@@ -90,9 +91,31 @@ const option = ref({
         <h1 class="text-2xl text-white font-bold pt-10">Cumulative Engagement</h1>
 
         <div class="">
-            <v-chart class="" autoresize :option="option" style="height: 450px"></v-chart>
+            <v-chart class="" autoresize :option="option" theme="dark" style="height: 400px"></v-chart>
+        </div>
+
+        <h1 class="text-2xl text-white font-bold">Statistical Confidence</h1>
+        <div class="grid grid-cols-4 gap-6 pt-4 pb-16">
+            <div class="text-white">
+                <p class="pt-2 font-bold text-xl">Likes</p>
+                <p class="pt-2">0% Vers. ?</p>
+            </div>
+            <div class="text-white">
+                <p class="pt-2 font-bold text-xl">Comments</p>
+                <p class="pt-2">0% Vers. ?</p>
+            </div>
+            <div class="text-white">
+                <p class="pt-2 font-bold text-xl">Shares</p>
+                <p class="pt-2">0% Vers. ?</p>
+            </div>
+            <div class="text-white">
+                <p class="pt-2 font-bold text-xl">Quotes</p>
+                <p class="pt-2">0% Vers. ?</p>
+            </div>
         </div>
     </div>
+
+
 </div>
 
 </template>

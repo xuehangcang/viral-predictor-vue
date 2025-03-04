@@ -4,7 +4,7 @@ import App from './App.vue'
 import router from './router'
 import Echarts from "vue-echarts"
 import * as echarts from "echarts"
-
+import 'echarts/theme/dark'
 
 const app = createApp(App)
 
