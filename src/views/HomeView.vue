@@ -1,4 +1,35 @@
 <script setup lang="ts">
+import { ref } from "vue";
+
+
+
+const option = ref({
+    legend: {
+        data: ['engagement_a', 'engagement_b']
+    },
+    xAxis: {
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: [
+        {
+            name: 'engagement_a',
+            data: [820, 932, 901, 934, 1290, 1330, 1320],
+            type: 'line',
+            smooth: true
+        },
+        {
+            name: 'engagement_b',
+            data: [810, 4, 901, 934, 1290, 1230, 1320],
+            type: 'line',
+            smooth: true
+        }
+    ]
+})
+
 
 </script>
 
@@ -14,7 +45,7 @@
                 <h1 class="text-2xl text-white font-bold pt-10">Version A</h1>
                 <p class="text-white text-sm pt-2">Enter your content here</p>
                 <div class="pt-2">
-                    <input class="bg-gray-800 text-white w-full h-60 rounded-lg focus:outline-none focus:ring ring-gray-500" type="text">
+                    <textarea class="bg-gray-800 pl-2 w-full h-60 rounded-lg focus:outline-none focus:ring ring-gray-500 text-white" rows="4"></textarea>
                 </div>
                 <p class="text-white text-sm pt-2">Platform</p>
                 <div class="pt-2">
@@ -44,7 +75,7 @@
                 <h1 class="text-2xl text-white font-bold pt-10">Version B</h1>
                 <p class="text-white text-sm  pt-2">Enter your content here</p>
                 <div class="pt-2">
-                    <input class="bg-gray-800 text-white w-full h-60 rounded-lg focus:outline-none focus:ring ring-gray-500" type="text">
+                    <textarea class="bg-gray-800 pl-2 w-full h-60 rounded-lg focus:outline-none focus:ring ring-gray-500 text-white" rows="4"></textarea>
                 </div>
                 <p class="text-white text-sm  pt-2">Max Users</p>
                 <div class="pt-2">
@@ -57,6 +88,10 @@
             </div>
         </div>
         <h1 class="text-2xl text-white font-bold pt-10">Cumulative Engagement</h1>
+
+        <div class="">
+            <v-chart class="" autoresize :option="option" style="height: 450px"></v-chart>
+        </div>
     </div>
 </div>
 
