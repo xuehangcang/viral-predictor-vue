@@ -89,7 +89,7 @@ async function PredictClick() {
 
 <template>
 
-    <div class="bg-gray-950 h-screen">
+    <div class="bg-gray-950">
         <div class="container mx-auto pt-10">
             <h1 class="text-3xl text-white font-bold">Viral Predictor</h1>
             <p class="text-white pt-4 font-bold">Simulate how users react to your content so you know it'll go viral
@@ -158,7 +158,7 @@ async function PredictClick() {
             </div>
 
             <h1 class="text-2xl text-white font-bold">Statistical Confidence</h1>
-            <div class="grid grid-cols-4 gap-6 pt-4 ">
+            <div class="grid grid-cols-4 gap-6 pt-4 pb-10">
                 <div class="text-white">
                     <p class="pt-2 font-bold text-xl">Likes</p>
                     <p class="pt-2">0% Vers. ?</p>
