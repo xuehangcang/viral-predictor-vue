@@ -1,6 +1,19 @@
 # Viral Predictor
 
-This template should help get you started developing with Vue 3 in Vite.
+vue implementation of the [viral-predictor](https://github.com/Azure-Vision/viral-predictor) project that helps content creators simulate user engagement before posting by leveraging AI to predict how users might react to different versions of content.
+
+## Features
+
+- A/B test two versions of your content
+- Supports multiple platforms (Twitter, TikTok, Instagram, LinkedIn, Facebook, Hacker News, Reddit, Blog Posts)
+- Real-time engagement predictions for:
+    - Likes
+    - Comments
+    - Shares
+    - Quotes
+- Statistical confidence scoring
+- Live engagement visualization
+
 
 ## Recommended IDE Setup
 
@@ -31,3 +44,19 @@ npm run dev
 ```sh
 npm run build
 ```
+
+
+## How It Works
+
+1. Enter two versions of your content
+2. Select your target platform
+3. Set the number of simulated users
+4. Enter your OpenRouter API key
+5. Click "Predict" to see how users might engage with your content
+
+The app simulates user behavior and provides statistical confidence scores for engagement metrics, helping you choose the most effective version of your content.
+
+## License
+
+This project is licensed under the MIT License.
+
