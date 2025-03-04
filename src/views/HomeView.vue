@@ -9,7 +9,7 @@ const option = ref({
     },
     xAxis: {
         type: 'category',
-        data: []
+        data: [0,1,2,3,4]
     },
     yAxis: {
         type: 'value'
@@ -17,13 +17,13 @@ const option = ref({
     series: [
         {
             name: 'engagement_a',
-            data: [],
+            data: [3,8,4,3,8],
             type: 'line',
             smooth: true
         },
         {
             name: 'engagement_b',
-            data: [],
+            data: [7,3,4,3,6],
             type: 'line',
             smooth: true
         }
