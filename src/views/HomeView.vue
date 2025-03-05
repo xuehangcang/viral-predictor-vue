@@ -231,6 +231,14 @@ async function PredictClick() {
         <p class="text-white pt-4 font-bold">Simulate how users react to your content so you know it'll go viral
             before you post</p>
 
+
+        <div class="flex items-center justify-center">
+            <div>
+                <p class="text-white text-2xl font-bold pt-4 text-center">Example usage</p>
+                <iframe class="w-[900px] h-[600px] pt-4" src="https://www.youtube.com/embed/XcQYm5TkhVg?si=9KlDJ68Itef7ICTj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
         <div class="grid grid-cols-2 gap-6">
             <div class="">
                 <h1 class="text-2xl text-white font-bold pt-10">Version A</h1>
